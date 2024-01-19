@@ -49,13 +49,8 @@ public class AnnonceUtilisateurController {
 
     @PostMapping("/AddAnnonceutilisateur")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<Annonceutilisateur> AddAnnonceutilisateur(@RequestBody Annonceutilisateur annonceutilisateur, MultipartFile[] file) throws IOException {
-
+    public ResponseEntity<Annonceutilisateur> AddAnnonceutilisateur(@RequestBody Annonceutilisateur annonceutilisateur) {
         Annonceutilisateur  createdAnnonceUtilisateur = annonceutilisateurService.AddAnnonceutilisateur(annonceutilisateur);
-        Integer maxid=annonceutilisateurService.getMaxId();
-        for (MultipartFile multipartFile:file) {
-            photoService.insertPhoto(multipartFile,maxid);
-        }
         return new ResponseEntity<>(createdAnnonceUtilisateur, HttpStatus.CREATED);
     }
 
