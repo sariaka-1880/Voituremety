@@ -36,5 +36,8 @@ public class V_AnnonceUtilisateurService {
         return v_annonceUtilisateurRepository.rechercheAvance(id_modele, id_couleur, annee, id_typevoiture, id_marque, prix1, prix2);
     }
 
+    public List<V_AnnonceUtilisateur> getListAnnonceValide(){
+        return v_annonceUtilisateurRepository.getListAnnonceValide();
+    }
 
 }

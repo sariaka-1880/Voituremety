@@ -14,4 +14,7 @@ public interface AnnonceutilisateurRepository extends JpaRepository<Annonceutili
     @Query(value = "select max(Annonceutilisateur) from V_AnnonceUtilisateur ", nativeQuery = true)
     Integer getMaxId();
 
+    @Query(value = "select * from Annonceutilisateur where id_annonceutilisateur = (select max(id_annonceutilisateur) from Annonceutilisateur)", nativeQuery = true)
+    Annonceutilisateur getLastAnnonceutilisateur();
+
 }

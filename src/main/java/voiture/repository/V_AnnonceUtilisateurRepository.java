@@ -25,7 +25,8 @@ public interface V_AnnonceUtilisateurRepository extends JpaRepository<V_AnnonceU
     @Query(value = "select * from V_AnnonceUtilisateur where status=1  and ( id_modele is not null or id_modele=?1) and (Id_couleur is not null or Id_couleur=?2) and (annee is not not null or annee = ?3) and (id_typevoiture is not null or id_typevoiture=4) and (id_marque is not null or id_marque=5) and ((prix is not null) or prix <6 and prix >7 )\n", nativeQuery = true)
     List<V_AnnonceUtilisateur> rechercheAvance(Integer id_modele,Integer id_couleur,Integer annee, Integer id_typevoiture,Integer id_marque,Double prix1,Double prix2 );
 
-
+    @Query(value = "select * from V_AnnonceUtilisateur where status=1", nativeQuery = true)
+    List<voiture.model.V_AnnonceUtilisateur> getListAnnonceValide();
 
 
 }

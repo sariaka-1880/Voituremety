@@ -53,5 +53,10 @@ public class V_AnnonceUtilisateurController {
         return v_annonceUtilisateurService.rechercheAvance(id_modele, id_couleur, annee, id_typevoiture, id_marque, prix1, prix2);
     }
 
+    @GetMapping("/getListAnnonceValide")
+    @PreAuthorize("hasRole('USER')")
+    public List<V_AnnonceUtilisateur> getListAnnonceValide(){
+        return v_annonceUtilisateurService.getListAnnonceValide();
+    }
 
 }
