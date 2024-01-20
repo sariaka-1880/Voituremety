@@ -25,9 +25,7 @@ public class UtilisateurController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Map<String, Object>> register(
-            @RequestBody RegisterRequest request
-    ) {
+    public ResponseEntity<Map<String, Object>> register(@RequestBody RegisterRequest request) {
         Map<String, Object> response = Util.getDefaultResponse();
         response.put("response", service.register(request));
         return new ResponseEntity<Map<String, Object>>(
@@ -37,9 +35,7 @@ public class UtilisateurController {
     }
 
     @PostMapping("/auth")
-    public ResponseEntity<Map<String, Object>> auth(
-            @RequestBody AuthenticationRequest request
-    ) {
+    public ResponseEntity<Map<String, Object>> auth(@RequestBody AuthenticationRequest request) {
         Map<String, Object> response = Util.getDefaultResponse();
         response.put("response", service.authenticate(request));
         return new ResponseEntity<Map<String, Object>>(

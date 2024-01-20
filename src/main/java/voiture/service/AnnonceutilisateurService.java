@@ -57,6 +57,9 @@ public class AnnonceutilisateurService {
     public void updateStatusAnnonce(Integer Id_Annonceutilisateur){
         annonceutilisateurRepository.updateStatusAnnonce(Id_Annonceutilisateur);
     }
+    public void updateStatusAnnonceVendu(Integer Id_Annonceutilisateur, Integer idutilisateur){
+        annonceutilisateurRepository.updateStatusAnnonceVendu(Id_Annonceutilisateur, idutilisateur);
+    }
 
     public Integer getMaxId(){
         return annonceutilisateurRepository.getMaxId();

@@ -84,6 +84,11 @@ public class AnnonceUtilisateurController {
         annonceutilisateurService.updateStatusAnnonce(Id_Annonceutilisateur);
 
     }
+    @GetMapping("/updateStatusAnnonceVendu")
+    @PreAuthorize("hasRole('USER')")
+    public void updateStatusAnnonceVendu(@RequestParam Integer Id_Annonceutilisateur, @RequestParam Integer idutilisateur ){
+        annonceutilisateurService.updateStatusAnnonceVendu(Id_Annonceutilisateur, idutilisateur);
+    }
 
 
 
